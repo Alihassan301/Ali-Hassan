@@ -1,0 +1,51 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Mono:wght@400;700&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+html {
+  background: #FAF9F6;
+  color: #252632;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+body {
+  font-family: 'Satoshi', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: #FAF9F6;
+}
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+::selection { background: #315EF7; color: #FAF9F6; }
+:focus-visible {
+  outline: 2px solid #315EF7;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+/* Continuous geometric motion */
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.animate-spin-slow { animation: spin-slow 26s linear infinite; transform-box: fill-box; transform-origin: center; }
+.animate-spin-slower { animation: spin-slow 38s linear infinite reverse; transform-box: fill-box; transform-origin: center; }
+.animate-spin-slowest { animation: spin-slow 52s linear infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes grid-pan { to { background-position: 24px 24px; } }
+.animate-grid-pan { animation: grid-pan 2.4s linear infinite; }
+/* Journey milestones */
+.journey-dot { transition: background-color 250ms cubic-bezier(0.23, 1, 0.32, 1), border-color 250ms cubic-bezier(0.23, 1, 0.32, 1), transform 250ms cubic-bezier(0.23, 1, 0.32, 1); }
+.journey-item.is-active .journey-dot { background-color: #315EF7; border-color: #315EF7; transform: scale(1.2); }
+.journey-item.is-active .journey-phase { color: #315EF7; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
