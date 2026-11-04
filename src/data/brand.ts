@@ -1,29 +1,35 @@
-import type { BrandItem, Trait } from "../types/content";
+import type { OceanDimension, Trait } from "../types/content";
 
-export const brandItems: BrandItem[] = [
+export const oceanDimensions: OceanDimension[] = [
 {
-  id: "attention",
-  letter: "A",
-  word: "Attention",
-  text: "I create modern digital experiences that combine thoughtful design with functional engineering."
+  id: "openness",
+  letter: "O",
+  word: "Openness to Experience",
+  text: "I approach problems with creativity and curiosity, exploring new technologies, learning new approaches, and looking for innovative ways to build better digital experiences."
 },
 {
-  id: "benefit",
-  letter: "B",
-  word: "Benefit",
-  text: "I focus on building responsive interfaces, practical web applications, and reliable integrations that help turn ideas into useful digital products."
-},
-{
-  id: "credibility",
+  id: "conscientiousness",
   letter: "C",
-  word: "Credibility",
-  text: "My portfolio demonstrates my work with modern frontend technologies, backend APIs, authentication, databases, and application development."
+  word: "Conscientiousness",
+  text: "I bring discipline, responsibility, and organization to every project, focusing on consistency, attention to detail, and quality-driven development."
 },
 {
-  id: "direction",
-  letter: "D",
-  word: "Direction",
-  text: "I aim to keep improving my engineering skills, building meaningful digital products, and collaborating on projects that solve real problems."
+  id: "extraversion",
+  letter: "E",
+  word: "Extraversion",
+  text: "I communicate clearly and confidently, sharing ideas, collaborating with others, and building professional connections that move projects forward."
+},
+{
+  id: "agreeableness",
+  letter: "A",
+  word: "Agreeableness",
+  text: "I value teamwork, cooperation, and respect, offering constructive feedback and understanding different perspectives to create better outcomes together."
+},
+{
+  id: "emotional-stability",
+  letter: "N",
+  word: "Emotional Stability",
+  text: "I manage challenges with composure, staying calm under pressure, adapting when things change, and approaching problems with emotional awareness and balance."
 }];
 
 

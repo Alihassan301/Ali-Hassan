@@ -155,7 +155,7 @@ export function PhotoScene({ photo, order }: PhotoSceneProps) {
               className="mt-6 inline-flex items-center gap-3 border-t border-graphite/15 pt-4 font-mono text-[11px] uppercase tracking-[0.16em] text-royal">
               
               <span aria-hidden="true" className="h-1.5 w-1.5 rotate-45 bg-iris" />
-              Connection — {photo.connection.replace(/^(ABCD|OCEAN) — /, "$1 · ")}
+              Connection — {photo.connection.replace(/^OCEAN — /, "OCEAN · ")}
             </p>
           </div>
         </div>

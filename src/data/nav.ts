@@ -3,7 +3,7 @@ import type { NavItem } from "../types/content";
 export const navItems: NavItem[] = [
 { id: "home", label: "Home" },
 { id: "about", label: "About" },
-{ id: "brand", label: "Personal Brand" },
+{ id: "ocean", label: "OCEAN Model" },
 { id: "skills", label: "Skills" },
 { id: "projects", label: "Projects" },
 { id: "contact", label: "Contact" }];
@@ -14,8 +14,8 @@ export const sectionToNav: Record<string, string> = {
   home: "home",
   identity: "about",
   about: "about",
-  brand: "brand",
-  personality: "brand",
+  ocean: "ocean",
+  personality: "ocean",
   skills: "skills",
   projects: "projects",
   journey: "projects",

@@ -5,6 +5,7 @@ interface ProjectPreviewProps {
   project: Project;
   aspectClass?: string;
   artClassName?: string;
+  imageFit?: "cover" | "contain";
   children?: ReactNode;
 }
 
@@ -74,9 +75,16 @@ const ART: Record<ProjectVariant, {bg: string;ink: string;shapes: ReactNode;}> =
 /**
  * Browser-framed preview. Uses the project's local screenshot when available.
  */
-export function ProjectPreview({ project, aspectClass = "aspect-[16/10]", artClassName = "", children }: ProjectPreviewProps) {
+export function ProjectPreview({
+  project,
+  aspectClass = "aspect-[16/10]",
+  artClassName = "",
+  imageFit = "cover",
+  children
+}: ProjectPreviewProps) {
   const art = ART[project.variant];
   const imageSrc = project.image ?? PREVIEW_IMAGES[project.id];
+  const imageFitClass = imageFit === "contain" ? "object-contain" : "object-cover";
 
   return (
     <div className="relative overflow-hidden rounded-[10px] border border-graphite/10 bg-pearl">
@@ -95,7 +103,7 @@ export function ProjectPreview({ project, aspectClass = "aspect-[16/10]", artCla
           alt={`${project.title} interface preview`}
           loading="lazy"
           decoding="async"
-          className={`absolute inset-0 h-full w-full object-cover transition-transform duration-300 ease-out-expo ${artClassName}`} /> :
+          className={`absolute inset-0 h-full w-full ${imageFitClass} transition-transform duration-300 ease-out-expo ${artClassName}`} /> :
 
 
         <div

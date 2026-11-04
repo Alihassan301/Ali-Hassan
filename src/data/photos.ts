@@ -8,7 +8,7 @@ export const photos: Photo[] = [
   title: "The Professional",
   caption:
   "This look represents professionalism, reliability, and a responsible approach to my work. It reflects the image I want to communicate as a Software Engineering student and Full Stack Developer.",
-  connection: "ABCD — Attention and Credibility",
+  connection: "OCEAN — Conscientiousness",
   alt: "Ali Hassan in a professional look",
   focus: "center 28%",
   layout: "portrait-left"
@@ -56,7 +56,7 @@ export const photos: Photo[] = [
   title: "The Future Full Stack Developer",
   caption:
   "This look represents my growing identity as a Full Stack Developer who combines technical thinking with creative problem-solving. It reflects my direction toward building useful, responsive, and reliable web applications.",
-  connection: "ABCD — Benefit and Direction",
+  connection: "OCEAN — Emotional Stability",
   alt: "Ali Hassan as a future Full Stack Developer",
   focus: "center 25%",
   layout: "portrait-right"

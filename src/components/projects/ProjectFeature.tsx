@@ -115,7 +115,7 @@ export function ProjectFeature({ project }: ProjectFeatureProps) {
         <div className="relative lg:col-span-7">
           <div data-p-bg aria-hidden="true" className="absolute -right-5 -top-6 bottom-10 left-16 bg-ice md:-right-10" />
           <div data-p-preview className="relative">
-            <ProjectPreview project={project} artClassName="group-hover:scale-[1.05]">
+            <ProjectPreview project={project} artClassName="group-hover:scale-[1.05]" imageFit="contain">
               <span
                 aria-hidden="true"
                 className={`animate-grid-pan pointer-events-none absolute inset-0 opacity-0 transition-opacity ${EASE} group-hover:opacity-100`}
@@ -280,7 +280,7 @@ export function ProjectFeature({ project }: ProjectFeatureProps) {
           <div data-p-bg aria-hidden="true" className="absolute -left-6 -top-6 h-[60%] w-[60%] bg-ice" />
           <div data-p-preview className="relative">
             <div className={`transition-transform ${EASE} group-hover:scale-[1.03]`}>
-              <ProjectPreview project={project} aspectClass="aspect-[4/3]" />
+              <ProjectPreview project={project} aspectClass="aspect-[4/3]" imageFit="contain" />
             </div>
           </div>
         </div>
@@ -291,13 +291,34 @@ export function ProjectFeature({ project }: ProjectFeatureProps) {
 
   // cooking
   return (
-    <article ref={ref} aria-label={project.title} className="group relative">
-      <div className="relative">
-        <div data-p-bg aria-hidden="true" className="absolute -bottom-8 left-[12%] right-[-2rem] top-10 bg-lavender md:right-[-2.5rem]" />
+    <article ref={ref} aria-label={project.title} className="group relative grid items-center gap-10 lg:grid-cols-12 lg:gap-8">
+      <div className="relative z-10 flex flex-col gap-6 lg:col-span-5">
+        {index}
+        <h3 className={`${titleBase} text-[clamp(3rem,8vw,7.5rem)]`}>
+          {leadLine}
+          <span className="block overflow-hidden pb-[0.1em]">
+            <span data-p-title className="block">
+              <span className="relative block h-[1.05em] overflow-hidden">
+                <span className={`flex flex-col transition-transform ${EASE} group-hover:-translate-y-1/2`}>
+                  <span className="block h-[1.05em] font-serif font-normal italic tracking-[-0.01em] text-graphite">{accent}</span>
+                  <span aria-hidden="true" className="block h-[1.05em] font-serif font-normal italic tracking-[-0.01em] text-iris">
+                    {accent}
+                  </span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </h3>
+        {desc}
+        {tech}
+        {link}
+      </div>
+      <div className="relative lg:col-span-7">
+        <div data-p-bg aria-hidden="true" className="absolute -right-5 -top-6 bottom-10 left-16 bg-lavender md:-right-10" />
         <div data-p-preview className="relative">
           <ProjectPreview
             project={project}
-            aspectClass="aspect-[4/3] md:aspect-[21/9]"
+            imageFit="contain"
             artClassName="group-hover:scale-[1.06] group-hover:-translate-x-[2%]">
             
             <span
@@ -305,31 +326,6 @@ export function ProjectFeature({ project }: ProjectFeatureProps) {
               className={`pointer-events-none absolute inset-y-0 left-0 w-1/3 -translate-x-full bg-iris/20 transition-transform ${EASE} group-hover:translate-x-[300%]`} />
             
           </ProjectPreview>
-        </div>
-      </div>
-      <div className="relative mt-12 grid items-end gap-8 lg:grid-cols-12">
-        <div className="flex flex-col gap-5 lg:col-span-7">
-          {index}
-          <h3 className={`${titleBase} text-[clamp(3rem,8vw,7.5rem)]`}>
-            {leadLine}
-            <span className="block overflow-hidden pb-[0.1em]">
-              <span data-p-title className="block">
-                <span className="relative block h-[1.05em] overflow-hidden">
-                  <span className={`flex flex-col transition-transform ${EASE} group-hover:-translate-y-1/2`}>
-                    <span className="block h-[1.05em] font-serif font-normal italic tracking-[-0.01em] text-graphite">{accent}</span>
-                    <span aria-hidden="true" className="block h-[1.05em] font-serif font-normal italic tracking-[-0.01em] text-iris">
-                      {accent}
-                    </span>
-                  </span>
-                </span>
-              </span>
-            </span>
-          </h3>
-        </div>
-        <div className="flex flex-col gap-6 lg:col-span-4 lg:col-start-9">
-          {desc}
-          {tech}
-          {link}
         </div>
       </div>
     </article>);

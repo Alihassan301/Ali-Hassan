@@ -19,8 +19,8 @@ export function PhotoStory() {
           } />
         
         <p className="max-w-sm self-end text-[17px] leading-relaxed text-graphite/70 lg:col-span-3 lg:col-start-10">
-          Five art-directed looks, each tied to a piece of the personal brand. Keep scrolling — every photograph grows into
-          its place.
+          Five art-directed looks, each tied to a dimension of the OCEAN personality model. Keep scrolling — every photograph
+          grows into its place.
         </p>
       </div>
 

@@ -52,8 +52,8 @@ export function Personality() {
             } />
           
           <p className="max-w-sm self-end text-[15px] leading-relaxed text-mist lg:col-span-3 lg:col-start-10">
-            Three selected professional branding traits, drawn from the OCEAN model to describe how I work — not results of a
-            personality assessment.
+            Three selected traits from the OCEAN model, used to describe how I work — not results of a personality
+            assessment.
           </p>
         </div>
 

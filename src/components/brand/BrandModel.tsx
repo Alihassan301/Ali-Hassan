@@ -6,14 +6,15 @@ import { EASE_OUT_EXPO, prefersReducedMotion } from "../../utils/motion";
 import { SectionHeader } from "../SectionHeader";
 import { Accent } from "../Accent";
 import { BrandGlyph } from "./BrandGlyph";
-import { brandItems } from "../../data/brand";
+import { oceanDimensions } from "../../data/brand";
 
-// Each row enters differently: from the left, from below, through a wipe, from the right.
+// Each row enters differently: from the left, from below, through a wipe, from the right, from above.
 const ENTRANCES: gsap.TweenVars[] = [
 { x: -80, opacity: 0 },
 { y: 60, opacity: 0 },
 { clipPath: "inset(0% 100% 0% 0%)" },
-{ x: 80, opacity: 0 }];
+{ x: 80, opacity: 0 },
+{ y: -60, opacity: 0 }];
 
 
 export function BrandModel() {
@@ -39,7 +40,7 @@ export function BrandModel() {
     const section = sectionRef.current;
     if (!section || prefersReducedMotion()) return;
     const ctx = gsap.context(() => {
-      gsap.utils.toArray<HTMLElement>("[data-brand-row]").forEach((row, i) => {
+      gsap.utils.toArray<HTMLElement>("[data-ocean-row]").forEach((row, i) => {
         gsap.from(row, {
           ...ENTRANCES[i % ENTRANCES.length],
           duration: 1,
@@ -47,47 +48,47 @@ export function BrandModel() {
           scrollTrigger: { trigger: row, start: "top 90%", once: true }
         });
       });
-      gsap.from("[data-brand-glyph]", {
+      gsap.from("[data-ocean-glyph]", {
         scale: 0.92,
         opacity: 0,
         duration: 1.1,
         ease: "expo.out",
-        scrollTrigger: { trigger: "[data-brand-glyph]", start: "top 85%", once: true }
+        scrollTrigger: { trigger: "[data-ocean-glyph]", start: "top 85%", once: true }
       });
     }, section);
     return () => ctx.revert();
   }, []);
 
   return (
-    <section id="brand" ref={sectionRef} aria-labelledby="brand-title" className="relative w-full bg-lavender py-24 md:py-40">
+    <section id="ocean" ref={sectionRef} aria-labelledby="ocean-title" className="relative w-full bg-lavender py-24 md:py-40">
       <div className="mx-auto max-w-[1600px] px-5 md:px-10">
         <SectionHeader
-          id="brand-title"
-          label="03 / Personal Brand"
+          id="ocean-title"
+          label="03 / OCEAN Model"
           title={
           <>
-              The Thinking <Accent>Behind</Accent> the Brand.
+              The Five <Accent>Dimensions</Accent> of How I Work.
             </>
           } />
         
 
         <div className="mt-14 grid gap-10 md:mt-20 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
-            <div data-brand-glyph className="mx-auto max-w-[420px] lg:sticky lg:top-28 lg:mx-0 lg:max-w-none">
-              <BrandGlyph activeIndex={shown} letter={brandItems[shown].letter} word={brandItems[shown].word} />
+            <div data-ocean-glyph className="mx-auto max-w-[420px] lg:sticky lg:top-28 lg:mx-0 lg:max-w-none">
+              <BrandGlyph activeIndex={shown} letter={oceanDimensions[shown].letter} word={oceanDimensions[shown].word} />
             </div>
           </div>
 
           <ul className="lg:col-span-7" onMouseLeave={() => setHovered(null)}>
-            {brandItems.map((item, i) => {
+            {oceanDimensions.map((item, i) => {
               const isActive = active === i;
               return (
-                <li key={item.id} data-brand-row className="border-t border-graphite/15 last:border-b">
+                <li key={item.id} data-ocean-row className="border-t border-graphite/15 last:border-b">
                   <button
                     type="button"
-                    id={`brand-btn-${item.id}`}
+                    id={`ocean-btn-${item.id}`}
                     aria-expanded={isActive}
-                    aria-controls={`brand-panel-${item.id}`}
+                    aria-controls={`ocean-panel-${item.id}`}
                     onClick={() => setActive(i)}
                     onMouseEnter={() => setHovered(i)}
                     onFocus={() => setActive(i)}
@@ -115,9 +116,9 @@ export function BrandModel() {
                   <AnimatePresence initial={false}>
                     {isActive &&
                     <motion.div
-                      id={`brand-panel-${item.id}`}
+                      id={`ocean-panel-${item.id}`}
                       role="region"
-                      aria-labelledby={`brand-btn-${item.id}`}
+                      aria-labelledby={`ocean-btn-${item.id}`}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}

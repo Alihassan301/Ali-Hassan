@@ -47,7 +47,7 @@ export interface SkillCategory {
   skills: Skill[];
 }
 
-export interface BrandItem {
+export interface OceanDimension {
   id: string;
   letter: string;
   word: string;

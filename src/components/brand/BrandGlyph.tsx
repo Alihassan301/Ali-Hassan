@@ -14,7 +14,7 @@ interface Pose {
   bar: {x: number;y: number;rotate: number;scaleX: number;};
 }
 
-// A focal target → two parts joining → a stacked structure → a forward vector.
+// A focal target → two parts joining → a stacked structure → a forward vector → a balanced field.
 const POSES: Pose[] = [
 {
   ring: { x: 0, y: 0, scale: 1.25 },
@@ -39,6 +39,12 @@ const POSES: Pose[] = [
   square: { x: 18, y: -8, rotate: 45, scale: 0.5 },
   dot: { x: 122, y: -72, scale: 1.25 },
   bar: { x: 0, y: 0, rotate: -30, scaleX: 1.1 }
+},
+{
+  ring: { x: 84, y: -84, scale: 0.55 },
+  square: { x: -84, y: 84, rotate: -45, scale: 0.7 },
+  dot: { x: -84, y: -84, scale: 0.75 },
+  bar: { x: 0, y: 118, rotate: 12, scaleX: 0.65 }
 }];
 
 
@@ -75,7 +81,7 @@ export function BrandGlyph({ activeIndex, letter, word }: BrandGlyphProps) {
         </svg>
       </div>
       <figcaption className="mt-4 flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.2em] text-mist">
-        <span>Fig. 03 — Brand model</span>
+        <span>Fig. 03 — OCEAN model</span>
         <span className="text-royal">
           {letter} · {word}
         </span>
