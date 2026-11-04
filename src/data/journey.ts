@@ -29,5 +29,5 @@ export const milestones: Milestone[] = [
   id: "growth",
   phase: "Ongoing",
   title: "Continued Professional Growth",
-  text: "With 2+ years of experience, continuing to sharpen my engineering skills, collaborate with others, and build meaningful digital products."
+  text: "With 1+ years of experience, continuing to sharpen my engineering skills, collaborate with others, and build meaningful digital products."
 }];

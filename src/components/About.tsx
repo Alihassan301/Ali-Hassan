@@ -88,7 +88,7 @@ export function About() {
             <div data-about-fact>
               <dt className="font-mono text-[11px] uppercase tracking-[0.18em] text-mist">Experience</dt>
               <dd className="mt-2 font-display text-5xl font-semibold tracking-[-0.03em] text-cobalt">
-                <span ref={countRef}>2+</span>
+                <span ref={countRef}>1+</span>
                 <span className="ml-2 align-middle font-sans text-base font-medium tracking-normal text-graphite">years</span>
               </dd>
             </div>
