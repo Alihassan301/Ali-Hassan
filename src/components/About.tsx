@@ -53,7 +53,7 @@ export function About() {
       const counter = { v: 0 };
       if (countRef.current) countRef.current.textContent = "0+";
       gsap.to(counter, {
-        v: 2,
+        v: 1,
         duration: 1.4,
         ease: "power2.out",
         scrollTrigger: { trigger: "[data-about-facts]", start: "top 90%", once: true },
@@ -89,7 +89,7 @@ export function About() {
               <dt className="font-mono text-[11px] uppercase tracking-[0.18em] text-mist">Experience</dt>
               <dd className="mt-2 font-display text-5xl font-semibold tracking-[-0.03em] text-cobalt">
                 <span ref={countRef}>1+</span>
-                <span className="ml-2 align-middle font-sans text-base font-medium tracking-normal text-graphite">years</span>
+                <span className="ml-2 align-middle font-sans text-base font-medium tracking-normal text-graphite">year</span>
               </dd>
             </div>
             <div data-about-fact>
