@@ -3,6 +3,8 @@ import { prefersReducedMotion } from "./motion";
 
 let instance: Lenis | null = null;
 
+const NAV_HEIGHT = 72;
+
 export function registerLenis(lenis: Lenis | null) {
   instance = lenis;
 }
@@ -16,9 +18,10 @@ export function scrollToSection(id: string) {
   if (!el) return;
   if (instance) {
     instance.start();
-    instance.scrollTo(el, { offset: 0, duration: 1.4 });
+    instance.scrollTo(el, { offset: -NAV_HEIGHT, duration: 1.4 });
   } else {
-    el.scrollIntoView({ behavior: prefersReducedMotion() ? "auto" : "smooth" });
+    const top = el.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT;
+    window.scrollTo({ top: Math.max(0, top), behavior: prefersReducedMotion() ? "auto" : "smooth" });
   }
   if (!el.hasAttribute("tabindex")) el.setAttribute("tabindex", "-1");
   el.focus({ preventScroll: true });

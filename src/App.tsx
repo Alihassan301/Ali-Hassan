@@ -4,11 +4,11 @@ import { Navigation } from "./components/Navigation";
 import { Hero } from "./components/hero/Hero";
 import { PhotoStory } from "./components/photos/PhotoStory";
 import { About } from "./components/About";
-import { BrandModel } from "./components/brand/BrandModel";
-import { Personality } from "./components/traits/Personality";
+// import { BrandModel } from "./components/brand/BrandModel";
+// import { Personality } from "./components/traits/Personality";
 import { Skills } from "./components/skills/Skills";
-import { Projects } from "./components/projects/Projects";
-import { Journey } from "./components/Journey";
+// import { Projects } from "./components/projects/Projects";
+// import { Journey } from "./components/Journey";
 import { Contact } from "./components/contact/Contact";
 import { useSmoothScroll } from "./hooks/useSmoothScroll";
 import { ScrollTrigger } from "./utils/gsap";
@@ -58,13 +58,13 @@ export function App() {
       <Navigation visible={ready} />
       <main id="main">
         <Hero ready={ready} />
-        <PhotoStory />
         <About />
-        <BrandModel />
-        <Personality />
+        <PhotoStory />
+        {/* <BrandModel /> */}
+        {/* <Personality /> */}
         <Skills />
-        <Projects />
-        <Journey />
+        {/* <Projects /> */}
+        {/* <Journey /> */}
         <Contact />
       </main>
     </div>);
